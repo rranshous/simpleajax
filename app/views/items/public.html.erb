@@ -1,0 +1,19 @@
+
+<div class="list">
+  <% @items.each do |item| %>
+    <script>
+     alert("<%= item.name %>");
+    </script>
+  <% end %>
+</div>
+
+<%= form_for(@item, remote:true) do |f| %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
